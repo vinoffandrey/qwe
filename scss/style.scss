@@ -1,0 +1,889 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	overflow-x: hidden;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+/*================================Подключение шрифтов===================================*/
+
+@font-face {
+	font-family: "MullerBold";
+	src: url("../assets/fonts/MullerBold.ttf");
+}
+
+@font-face {
+	font-family: "Muller Light Italic";
+	src: url("../assets/fonts/MullerLightItalic.ttf");
+}
+
+@font-face {
+	font-family: "Muller Light";
+	src: url("../assets/fonts/MullerLight.ttf");
+}
+
+/*================================Верхний блок===================================*/
+
+.top {
+	&__section {
+		position: relative;
+		height: 970px;
+		@media (max-width: 900px) {
+			height: 670px;
+		}
+		@media (max-width: 600px) {
+			height: 830px;
+		}
+		@media (max-width: 570px) {
+			height: 793px;
+		}
+		@media (max-width: 540px) {
+			height: 754px;
+		}
+		@media (max-width: 450px) {
+			height: 730px;
+		}
+		@media (max-width: 430px) {
+			height: 695px;
+		}
+		&.active {
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 3;
+			width: 100%;
+			height: 100vh;
+		}
+	}
+
+	&__container {
+		background: url("../assets/img/top_bakground.png") 0 -40px / 100% no-repeat;
+		height: 847px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		background-position-x: center;
+		background-size: auto 847px;
+		&.active {
+			background: url("../assets/img/top_bakground.png") 0 2px / 100% no-repeat;
+			background-size: auto 100vh;
+			height: 100%;
+		}
+		@media (max-width: 900px) {
+			height: 670px;
+			background: url("../assets/img/top_bakground.png") 0 -343px / 100% no-repeat;
+			background-position-x: center;
+			background-size: auto 847px;
+		}
+		@media (max-width: 600px) {
+			height: 100%;
+			background: url("../assets/img/top__background3.png") 0 0 / 100% no-repeat;
+			background-position-x: center;
+		}
+		@media (max-width: 400px) {
+			background-size: auto 572px;
+		}
+	}
+
+	&__body {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 30px 0;
+		@media (max-width: 900px) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__title {
+		flex: 1 1 auto;
+		font-family: "MullerBold";
+		font-size: 100px;
+		color: #001e4c;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		p {
+			opacity: 1;
+			background-color: rgba(255, 255, 255, 0.7);
+			padding: 50px 50px 20px 50px;
+			text-transform: uppercase;
+		}
+		@media (max-width: 1200px) {
+			font-size: 60px;
+		}
+		@media (max-width: 900px) {
+			display: none;
+		}
+	}
+
+	&__menu {
+		&_container {
+			flex: 0 1 auto;
+			display: flex;
+			justify-content: flex-end;
+			@media (max-width: 900px) {
+				display: none;
+			}
+			ul {
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+			}
+			li {
+				font-family: "MullerBold";
+				font-size: 22px;
+				color: #ffffff;
+				background-color: #001e4c;
+				padding: 20px 30px 10px 40px;
+				margin: 10px 0;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				cursor: pointer;
+				width: 265px;
+				transition: all 0.3s ease 0s;
+				&:hover {
+					width: 300px;
+					transition: all 0.3s ease 0s;
+				}
+				@media (max-width: 1200px) {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	&__submenu {
+		&_container {
+			display: none;
+			justify-content: space-between;
+			flex-direction: column;
+			background-color: #001e4c;
+			height: 100vh;
+			padding: 150px 40px 20px 40px;
+			&.active {
+				display: flex;
+			}
+		}
+
+		&_item {
+			width: 300px;
+		}
+
+		&_text {
+			width: 300px;
+			display: flex;
+			align-items: flex-end;
+			flex-direction: column;
+			&.active {
+				display: none;
+			}
+			p {
+				text-align: end;
+				color: #ffffff;
+				font-family: "MullerBold";
+				font-size: 23px;
+				margin: 0 0 20px 0;
+				&:last-child {
+					font-family: "Muller Light";
+				}
+			}
+		}
+
+		&_title {
+			font-family: "MullerBold";
+			font-size: 21px;
+			color: #ffffff;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+			padding: 0 0 3px 15px;
+			cursor: pointer;
+			position: relative;
+			margin: 7px 0 0 0;
+			&:after {
+				content: "";
+				top: 40%;
+				right: 0;
+				position: absolute;
+				background-color: rgba(255, 255, 255, 0.7);
+				width: 15px;
+				height: 1px;
+			}
+			&:before {
+				content: "";
+				top: 40%;
+				right: 0;
+				position: absolute;
+				background-color: rgba(255, 255, 255, 0.7);
+				width: 15px;
+				height: 1px;
+				transform: rotate(90deg);
+				transition: 0.3s ease 0s;
+			}
+			&.active {
+				&:before {
+					opacity: 0;
+					transition: 0.3s ease 0s;
+				}
+			}
+		}
+
+		&_subtitle {
+			font-family: "Muller Light";
+			font-size: 21px;
+			color: #ffffff;
+			padding: 15px 0 15px 15px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+			display: none;
+			&:last-child {
+				border-bottom: none;
+			}
+			li {
+				margin: 15px 0;
+				&:first-child {
+					margin: 0 0 15px 0;
+				}
+				a {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+}
+.menu__link {
+	&.active {
+		width: 300px;
+	}
+}
+.menu__burger {
+	top: 30px;
+	right: 5%;
+	display: block;
+	width: 60px;
+	padding: 5px;
+	background-color: #14234c;
+	height: 45px;
+	margin: 0;
+	position: fixed;
+	z-index: 2;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	transition: 0.2s ease 0s;
+	&:hover {
+		background-color: rgba(20, 35, 76, 0.7);
+		width: 65px;
+		transition: 0.2s ease 0s;
+	}
+}
+.menu__burger span {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 1);
+	width: 35px;
+	height: 5px;
+	left: 14%;
+	top: 20px;
+}
+.menu__burger:before {
+	top: 10px;
+	-webkit-transition-delay: 50ms;
+	transition-delay: 50ms;
+	-webkit-transition: all 0.7s;
+	transition: all 0.7s;
+}
+.menu__burger:before,
+.menu__burger:after {
+	content: "";
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width: 35px;
+	height: 5px;
+	left: 14%;
+}
+.menu__burger:after {
+	bottom: 10px;
+}
+.menu__burger_close {
+	background-color: #606060;
+	border-radius: 5px;
+	top: 30px;
+	right: 30px;
+	display: block;
+	width: 55px;
+	height: 55px;
+	margin: 0;
+	position: fixed;
+	z-index: 4;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	transition: 0.2s ease 0s;
+	&:hover {
+		background-color: rgba(96, 96, 96, 0.7);
+		transition: 0.2s ease 0s;
+	}
+}
+.menu__burger_close span {
+	display: none;
+}
+.menu__burger_close:before {
+	top: 26px;
+	transform: rotate(45deg);
+}
+.menu__burger_close:before,
+.menu__burger_close:after {
+	content: "";
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width: 50px;
+	height: 4px;
+	left: 5%;
+	border-radius: 5px;
+}
+.menu__burger_close:after {
+	bottom: 25px;
+	transform: rotate(-45deg);
+}
+@media (max-width: 900px) {
+	.top__container.active .top__menu_container {
+		display: block;
+	}
+}
+@media (max-width: 1650px) {
+	.top__container.active .top__title {
+		font-size: 80px;
+	}
+	.top__container.active .top__menu_container ul li {
+		font-size: 20px;
+	}
+	.top__submenu_container.active .top__submenu_title {
+		font-size: 19px;
+	}
+}
+@media (max-width: 1450px) {
+	.top__container.active .top__title {
+		font-size: 60px;
+	}
+	.top__container.active .top__menu_container ul li {
+		font-size: 19px;
+	}
+	.top__submenu_container.active .top__submenu_title {
+		font-size: 18px;
+	}
+}
+@media (max-width: 1250px) {
+	.top__container.active .top__title {
+		font-size: 60px;
+	}
+	.top__container.active .top__menu_container ul li {
+		font-size: 19px;
+	}
+	.top__submenu_container.active .top__submenu_title {
+		font-size: 18px;
+	}
+	.top__submenu_container.active .top__submenu_item,
+	.top__submenu_container.active .top__submenu_text {
+		width: 250px;
+		margin: 0 !important;
+	}
+}
+@media (max-width: 1150px) {
+	.top__container.active .top__title {
+		display: none;
+	}
+	.top__container.active .top__body {
+		justify-content: flex-end;
+	}
+	.top__container.active .top__menu_container ul li {
+		font-size: 19px;
+	}
+	.top__submenu_container.active .top__submenu_title {
+		font-size: 18px;
+	}
+}
+@media (max-width: 600px) {
+	.top__container.active .top__title {
+		display: none;
+	}
+	.top__container.active .top__body {
+		justify-content: flex-end;
+		align-items: flex-end;
+		padding: 0;
+	}
+	.top__container.active .top__menu_container {
+		position: absolute;
+		li {
+			margin: 0;
+			padding: 10px 30px 10px 10px;
+		}
+	}
+	.top__submenu_container.active {
+		width: 100%;
+		align-items: flex-end;
+		padding: 110px 40px 20px 40px;
+	}
+	.top__container.active .top__submenu_text {
+		display: none;
+	}
+	.top__submenu_container.active .top__submenu_title {
+		font-size: 18px;
+	}
+}
+/*================================Главный блок===================================*/
+
+.main {
+	&__section {
+		margin: -220px 0 0 0;
+		position: relative;
+		height: 1016px;
+		z-index: 2;
+		@media (max-width: 1300px) {
+			height: 870px;
+		}
+		@media (max-width: 600px) {
+			margin: -50px 0 0 0;
+		}
+		@media (max-width: 517px) {
+			margin: -75px 0 0 0;
+		}
+		@media (max-width: 495px) {
+			margin: -110px 0 0 0;
+		}
+		@media (max-width: 470px) {
+			margin: -143px 0 0 0;
+		}
+		@media (max-width: 430px) {
+			margin: -143px 0 0 0;
+		}
+	}
+
+	&__container {
+		background: url("../assets/img/main_background2.png") 0 0 no-repeat;
+		height: 120vh;
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		background-position-x: center;
+		background-size: 100% 1100px;
+		@media (max-width: 1300px) {
+			background-size: 100% 1025px;
+		}
+		@media (max-width: 768px) {
+			height: 100%;
+		}
+		@media (max-width: 600px) {
+			background: url("../assets/img/main_background3.png") 0 0 no-repeat;
+		}
+	}
+	&__social {
+		background-color: #8c9699;
+		display: flex;
+		justify-content: center;
+		padding: 20px 0;
+		align-items: center;
+		a {
+			display: flex;
+			align-items: center;
+		}
+		svg {
+			width: 45px;
+			height: 45px;
+			fill: #ffffff;
+			margin: 0 20px;
+			@media (max-width: 600px) {
+				width: 35px;
+				height: 35px;
+			}
+		}
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__body {
+		padding: 70px 20px 0 0;
+		background-color: #ffffff;
+		margin: 110px 220px 0 0;
+		display: flex;
+		align-items: flex-start;
+		@media (max-width: 1300px) {
+			margin: 110px 0 0 0;
+		}
+		@media (max-width: 768px) {
+			padding: 30px 0 0 0;
+			margin: 30px 0 0 0;
+		}
+	}
+
+	&__left {
+		flex: 1 1 500px;
+		border-top: 1px dashed #333;
+		border-right: 3px solid #000;
+		border-bottom: 1px dashed #333;
+		margin: 0 200px 0 0;
+		@media (max-width: 1300px) {
+			margin: 0 120px 0 0;
+		}
+		@media (max-width: 900px) {
+			margin: 0 50px 0 0;
+		}
+		@media (max-width: 768px) {
+			display: none;
+		}
+		&_body {
+			padding: 40px 70px 10px 100px;
+			@media (max-width: 900px) {
+				padding: 40px 70px 10px 50px;
+			}
+		}
+
+		&_item {
+			width: 150px;
+			margin: 0 0 35px 0;
+		}
+
+		&_title {
+			font-family: "MullerBold";
+			font-size: 18px;
+			color: #606060;
+			cursor: pointer;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		&_subtitle {
+			margin: 0 0 45px 0;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			display: none;
+			li {
+				font-family: "Muller Light";
+				font-size: 18px;
+				color: #606060;
+				margin: 10px 0;
+				cursor: pointer;
+				padding: 10px 0 10px 30px;
+				width: 150px;
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+
+		&_active {
+			background-color: #f1f2f4;
+			width: 146.5% !important;
+			position: relative;
+			&:hover {
+				transform: scale(1) !important;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100px;
+				width: 100px;
+				height: 39px;
+				background-color: #f1f2f4;
+			}
+		}
+	}
+	&__double {
+		&_menu {
+			display: flex;
+			margin: 90px 0 0 0;
+			justify-content: center;
+			@media (max-width: 600px) {
+				margin: 50px 0 0 0;
+			}
+			ul {
+				display: flex;
+				li {
+					margin: 0 30px;
+					position: relative;
+					&:last-child {
+						&:after {
+							display: none;
+						}
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						top: 4px;
+						left: 80px;
+						width: 10px;
+						height: 10px;
+						background-color: #001e4c;
+					}
+					a {
+						font-family: "Muller Light";
+						font-size: 20px;
+						color: #606060;
+					}
+				}
+			}
+			@media (min-width: 768px) {
+				display: none;
+			}
+		}
+	}
+	&__right {
+		flex: 0 1 auto;
+		&_body {
+			padding: 20px 130px 20px 0;
+			@media (max-width: 1300px) {
+				padding: 20px 50px 20px 0;
+			}
+			@media (max-width: 768px) {
+				padding: 0;
+			}
+		}
+
+		&_text {
+			p {
+				font-family: "Muller Light Italic";
+				font-size: 18px;
+				color: #606060;
+				margin: 0 0 20px 0;
+				@media (max-width: 768px) {
+					padding: 0 20px;
+				}
+			}
+		}
+
+		&_name {
+			float: right;
+		}
+
+		&_photo {
+			height: 100%;
+			img {
+				width: 80%;
+				@media (max-width: 768px) {
+					object-fit: cover;
+					height: 350px;
+					width: 100%;
+				}
+			}
+			@media (max-width: 600px) {
+				margin: -50px 0 0 0;
+			}
+		}
+	}
+}
+
+/*================================Нижний блок===================================*/
+
+.footer {
+	&__container {
+		background-color: #001e4c;
+	}
+
+	&__body {
+		display: flex;
+		padding: 150px 100px 40px 150px;
+		@media (max-width: 1300px) {
+			padding: 150px 0 40px 0;
+		}
+		@media (max-width: 900px) {
+			flex-wrap: wrap;
+		}
+		@media (max-width: 600px) {
+			padding: 80px 0 20px 0;
+		}
+		@media (max-width: 500px) {
+			padding: 130px 0 20px 0;
+		}
+		@media (max-width: 440px) {
+			padding: 160px 0 20px 0;
+		}
+		@media (max-width: 390px) {
+			padding: 200px 0 20px 0;
+		}
+		@media (max-width: 370px) {
+			padding: 250px 0 20px 0;
+		}
+	}
+
+	&__column {
+		flex: 1 1 33.333%;
+		padding: 0 20px 0 60px;
+		border-right: 1px solid rgba(255, 255, 255, 0.6);
+		@media (max-width: 1300px) {
+			padding: 0 10px 0 30px;
+		}
+		@media (max-width: 394px) {
+			&:first-child {
+				margin: 0 0 40px 0;
+			}
+		}
+		@media (max-width: 900px) {
+			&:last-child {
+				flex: 1 1 100%;
+				margin: 20px 0 0 0;
+			}
+		}
+		@media (max-width: 600px) {
+			&:last-child {
+				display: none;
+			}
+		}
+		&:last-child {
+			border: none;
+		}
+		p {
+			color: #ffffff;
+			font-family: "MullerBold";
+			font-size: 23px;
+			margin: 0 0 50px 0;
+			@media (max-width: 600px) {
+				font-size: 19px;
+				margin: 0 0 30px 0;
+			}
+		}
+		&.second {
+			p {
+				font-family: "Muller Light";
+			}
+			@media (max-width: 900px) {
+				border-right: none;
+			}
+		}
+	}
+
+	&__logo {
+		margin: 100px 0 0 0;
+		@media (max-width: 600px) {
+			margin: 50px 0 0 0;
+		}
+		img {
+			width: 80%;
+		}
+	}
+
+	&__search {
+		position: relative;
+		input {
+			border: 5px solid #606060;
+			height: 50px;
+			width: 90%;
+			color: #000;
+			font-family: "MullerBold";
+			font-size: 23px;
+			padding: 0 0 0 20px;
+			&:focus {
+				background-color: rgba(255, 255, 255, 0.9);
+			}
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 80%;
+			background-color: #606060;
+			width: 50px;
+			height: 50px;
+			@media (max-width: 900px) {
+				left: 84%;
+			}
+		}
+		svg {
+			position: absolute;
+			top: 20%;
+			left: 82%;
+			fill: #ffffff;
+			z-index: 1;
+			width: 27px;
+			height: 27px;
+			@media (max-width: 900px) {
+				left: 85.3%;
+			}
+		}
+	}
+
+	&__menu {
+		color: #ffffff;
+		font-family: "MullerBold";
+		font-size: 23px;
+		ul {
+			@media (max-width: 900px) {
+				display: flex;
+				justify-content: space-around;
+			}
+			li {
+				margin: 30px 0 0 0;
+				padding: 0 0 0 10px;
+				a {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+}
